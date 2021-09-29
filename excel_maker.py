@@ -1,4 +1,6 @@
-from Array import Array
+from array import Array
+from color import Color
+
 import openpyxl
 
 class ExcelMaker:
@@ -21,7 +23,7 @@ class ExcelMaker:
         else:
             self.book.save(f"{path}{self.__filename}")
 
-    def write_in_work_sheet(self, work_sheet="Sheet", data=[]):
+    def write_in_work_sheet(self, work_sheet="Sheet", data=[], header="", color=Color.WHITE):
         _data = Array(data)
 
         sheet = self.book[work_sheet] 
